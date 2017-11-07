@@ -2,7 +2,7 @@
 ## 소개
 
 ### UpLink / DownLink 설명 
-### <a href="https://github.com/Haamseongho/ubinet_arduino"> 업링크와 다운링크 설명 </a>
+### - <a href="https://github.com/Haamseongho/ubinet_arduino"> 업링크와 다운링크 설명 </a>
 
 <hr />
 
@@ -85,12 +85,12 @@
 
 ### 1. SKT_LoRa.h 다운로드 
 
-#### 1.1    <a href="https://github.com/Haamseongho/ubinet_arduino/tree/master/downloads/solum_lora_library.zip"> 솔루엠 해더파일 및 라이브러리 전체 다운로드 </a>
+#### 1.1    - <a href="https://github.com/Haamseongho/ubinet_arduino/tree/master/downloads/solum_lora_library.zip"> 솔루엠 해더파일 및 라이브러리 전체 다운로드 </a>
 
-#### 1.2    <a href="https://github.com/Haamseongho/ubinet_arduino/tree/master/downloads/SKT_LoRa_cpp.zip"> 주요 해더파일만 정리된 cpp 소스코드 다운로드 </a>
+#### 1.2    - <a href="https://github.com/Haamseongho/ubinet_arduino/tree/master/downloads/SKT_LoRa_cpp.zip"> 주요 해더파일만 정리된 cpp 소스코드 다운로드 </a>
 
 
-#### 1.3    <a href="https://github.com/Haamseongho/ubinet_arduino/blob/master/downloads/Timer-master.zip"> Timer.h 다운로드  </a>
+#### 1.3    - <a href="https://github.com/Haamseongho/ubinet_arduino/blob/master/downloads/Timer-master.zip"> Timer.h 다운로드  </a>
 
 
 #### 1.4    Usage & Information ( reference : <a href="https://playground.arduino.cc/Code/Timer"> https://playground.arduino.cc/Code/Timer )</a>
@@ -156,7 +156,7 @@ LoRa 모듈을 통해 디바이스에 역제어를 거는 형식입니다.
 #### 1. POSTMAN에서 ThingPlug 서버와 소통하고자 header 부분 그리고 end-point 부분을 맞춰 준다.
 
 
-#### <a href="https://github.com/Haamseongho/ubinet_Server.git"> ThingPlug 서버 디바이스 등록 및 Ukey 받는 작업 & PostMan 활용 방법  </a>
+#### - <a href="https://github.com/Haamseongho/ubinet_Server.git"> ThingPlug 서버 디바이스 등록 및 Ukey 받는 작업 & PostMan 활용 방법  </a>
 
 #### 2. POSTMAN을 이용하여 설정을 맞춰 주면 LoRa망을 통해 디바이스에 역제어를 걸 수 있습니다.
 
@@ -197,7 +197,7 @@ LoRa 모듈을 통해 디바이스에 역제어를 거는 형식입니다.
 - Kakao.api : <a href="https://github.com/Haamseongho/ubinet_Server/tree/master/kk_login"> 카카오 계정 활용 로그인  </a>
 
 
-그 외 사용 OSS : <a href="https://github.com/Haamseongho/ubinet_Server">
+그 외 사용 OSS : - <a href="https://github.com/Haamseongho/ubinet_Server">
 다른 OSS 활용 내용 정리 </a>
 
 ---
@@ -206,4 +206,5 @@ LoRa 모듈을 통해 디바이스에 역제어를 거는 형식입니다.
 
 MIT 
 
-node license : <a href="https://github.com/nodejs/node/blob/master/LICENSE"> https://github.com/nodejs/node/blob/master/LICENSE</a>
+#### node license 
+- <a href="https://github.com/nodejs/node/blob/master/LICENSE"> https://github.com/nodejs/node/blob/master/LICENSE</a>
