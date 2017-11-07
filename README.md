@@ -103,19 +103,15 @@
 
 
 ```
-
 	$git clone https://github.com/Haamseongho/LoRa_oss.git
 	
-
 ```
 
 ### 4. DownLink Library Installation
 
 ```
-
 	$git clone https://github.com/Haamseongho/LoRa_oss.git
-
-
+	
 ```
 
 같은 레퍼짓토리에 다른 폴더로 정리 되어 있기 때문에 둘을 같이 정리하면 
@@ -146,11 +142,9 @@ LoRa 모듈을 통해 디바이스에 역제어를 거는 형식입니다.
 ### Installation
 
 ```
-
 	$ git clone https://github.com/Haamseongho/ubinet_Server.git
 	$ npm install (클론 받은 로컬 저장소에서)
 	
-
 ```
 
 
