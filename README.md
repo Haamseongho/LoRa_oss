@@ -187,6 +187,21 @@ LoRa 모듈을 통해 디바이스에 역제어를 거는 형식입니다.
 
 ---
 
+
+### Acknowledgements 
+
+
+- ThingPlug 일반 예제 공개 코드 :  <a href="https://github.com/SKT-ThingPlug/thingplug-starter-kit"> ThingPlug Starter-kit  </a> 
+- firebase push : <a href="https://github.com/nandarustam/fcm-push"> nandarustam/fcm-push </a>
+- facebook.api : <a href="https://github.com/Haamseongho/ubinet_Server/tree/master/fb_login"> 페이스북 계정 활용 로그인 </a>
+- Kakao.api : <a href="https://github.com/Haamseongho/ubinet_Server/tree/master/kk_login"> 카카오 계정 활용 로그인  </a>
+
+
+그 외 사용 OSS : <a href="https://github.com/Haamseongho/ubinet_Server">
+다른 OSS 활용 내용 정리 </a>
+
+---
+
 ### License
 
 MIT 
