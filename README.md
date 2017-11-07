@@ -162,7 +162,7 @@ LoRa 모듈을 통해 디바이스에 역제어를 거는 형식입니다.
 
 <br />
 
-<img src="https://github.com/Haamseongho/ubinet_arduino/tree/master/images/postman2.JPG" />
+<img src="./images/postman2.JPG" />
 
 
 #### 3. clone받은 내용 중 route에서 dn_link 경로에 dev_reset.js를 활용합니다. 
@@ -174,13 +174,13 @@ LoRa 모듈을 통해 디바이스에 역제어를 거는 형식입니다.
 
 포스트 맨에서 설정한 내용에 대한 code 뽑아오기
 
-<img src="https://github.com/Haamseongho/ubinet_arduino/tree/master/images/postman3.JPG"/>
+<img src="./images/postman3.JPG"/>
 
 
 <hr />
 
 
-<img src="https://github.com/Haamseongho/ubinet_arduino/tree/master/images/dev_reset.JPG" />
+<img src="./images/dev_reset.JPG" />
 
 #### 5. dev_reset.js 부분이며 본 라우터에서 해당 디바이스에 역제어를 걸게 됩니다. (다운링크 완성)
 
