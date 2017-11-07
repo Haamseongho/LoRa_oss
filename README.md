@@ -1,3 +1,11 @@
+
+## 소개
+
+### UpLink / DownLink 설명 
+### <a href="https://github.com/Haamseongho/ubinet_arduino"> 업링크와 다운링크 설명 </a>
+
+<hr />
+
  **LoRa해더 파일** 은 기존의 시리얼3번을 통해 LoRa모듈과 아두이노 간의 통신을 보다 더 쉽게 하기 위해 만들어진 것으로, 
  본 프로젝트 작업 간에 유용하게 쓰기 위해서 추가 구성하여 정리하였음. 
 
@@ -68,116 +76,125 @@
 > 2. 예를 들어 클래스 타입을 가지고 왔는데 클래스 타입이 설정이 안되어 있을 경우 에러가 나기 때문에 Set을 통하여 클래스 타입을 정해준다.
 
 
-### UpLink / DownLink 설명 
-### <a href="https://github.com/Haamseongho/ubinet_arduino"> 업링크와 다운링크 설명 </a>
+
 
 <br />
 
-## UpLink Library Installation
-
-```
-
-	$git clone https://github.com/haamseongho/
+## Installation 
 
 
-```
+### 1. SKT_LoRa.h 다운로드 
 
-## DownLink
+#### 1.1    <a href="https://github.com/Haamseongho/ubinet_arduino/tree/master/downloads/solum_lora_library.zip"> 솔루엠 해더파일 및 라이브러리 전체 다운로드 </a>
 
-```
+#### 1.2    <a href="https://github.com/Haamseongho/ubinet_arduino/tree/master/downloads/SKT_LoRa_cpp.zip"> 주요 해더파일만 정리된 cpp 소스코드 다운로드 </a>
 
 
-	#include "Arduino.h"
-	#include <SKT_LoRa.h>
+#### 1.3    <a href="https://github.com/Haamseongho/ubinet_arduino/blob/master/downloads/Timer-master.zip"> Timer.h 다운로드  </a>
 
-	#include <Timer.h>
 
-	#define LORA_SEND_PERIOD 65000
-	#define LORA_TIMEOUT     120000
+#### 1.4    Usage & Information ( reference : <a href="https://playground.arduino.cc/Code/Timer"> https://playground.arduino.cc/Code/Timer )</a>
 
-	#define LORA_RXDONE "RX DONE"
-	#define LORA_TP_DEVMGMT "SKT_EXT_DEVMGMT\r\n"
-	#define LORA_TP_RESET "SKT_DEV_RESET\r\n"
+<br />
 
-	#define CMD_CLASS_SET "AT+CLS C\r\n"
-	#define CMD_CLASS_GET "AT+CLS\r\n"
-	#define CMD_CLASS_RSP "- Class : C"
+### 2. Arduino 라이브러리 zip파일로 추가하기 
 
-	#define CMD_SAVE_SET "AT+SCFG\r\n"
-	#define CMD_SAVE_RSP "Save configuration"
-
-	#define CMD_RESET_SET "AT+RST\r\n"
-	#define CMD_RESET_RSP "RESET OK"
-
-	#define CMD_TIMEOUT 3000
-
-	Timer send_t, timeout_t;
-
-	uint8_t timeout_timer_id;
-	bool ack_check_flag;
-
-	SKT_LoRaRingBuffer LoRaBuf(512);
-	void setup() {
-  		Serial.begin(115200); // Serial initial Debug
-  		Serial3.begin(38400); // Begin Serial_5 LoRa
-  
-  		LoRa.init(&Serial3);
-  		LoRa.begin();
-  	/*
-     	1. Serial3 LoRa-Driver로 초기화 시킨다.
-     	2. LoRa드라이버를 초기화 시킨다. (-> AT+RST 후 Join request보내기)
-  	*/
-
-  	if (LoRa.Get(CMD_CLASS_GET, CMD_CLASS_RSP, CMD_TIMEOUT) == false)
-  	 {
-    	LoRa.Set(CMD_CLASS_SET, CMD_CLASS_RSP, CMD_TIMEOUT);
-    	delay(1000);
-    	LoRa.Set(CMD_SAVE_SET, CMD_SAVE_RSP, CMD_TIMEOUT);
-    	delay(1000);
-    	LoRa.Set(CMD_RESET_SET, CMD_RESET_RSP, CMD_TIMEOUT);
-  	  }
- 	}
-	void device_reset(void)
-	{
-  		Serial.println(__FUNCTION__);
-  		delay(1000);
-  		LoRa.begin();
-	}
-	void loop() {
-  		char rev_char;
-  		send_t.update();
-  		timeout_t.update();
-
-  	if (LoRa.available()) {
-    	char ch = LoRa.read();
-    	LoRaBuf.push(ch);
-    	if (LoRaBuf.FindStr(LORA_TP_DEVMGMT)) {
-      	LoRaBuf.init();
-      	{
-        	do
-        	{
-          	if (LoRa.available())
-          	{
-            	rev_char = LoRa.read();
-            	LoRaBuf.push(rev_char);
-          	}
-        	} while (rev_char != '\n');
-      	}
-      	LoRaBuf.printbuffer();
-      	LoRaBuf.init();
-    	}
-
-    	if (LoRaBuf.FindStr(LORA_TP_RESET))
-    	{
-      		LoRaBuf.init();
-      		Serial.println("[DEVRESET]");
-      		LoRaBuf.init();
-      		device_reset();
-    	}
-  	}
-	}
-
+### 3. UpLink Library Installation
 
 
 ```
 
+	$git clone https://github.com/Haamseongho/LoRa_oss.git
+	
+
+```
+
+### 4. DownLink Library Installation
+
+```
+
+	$git clone https://github.com/Haamseongho/LoRa_oss.git
+
+
+```
+
+같은 레퍼짓토리에 다른 폴더로 정리 되어 있기 때문에 둘을 같이 정리하면 
+
+하나의 완성 프로젝트로 체크할 수 있습니다. 
+
+따로 정리한 이유는 다른 센서 코드들과 같이 합쳐서 종합할 때 편하게 하기 위함입니다.
+
+
+---
+###  UpLink  : Device -> LoRa -> ThingPlug Server-> Cloud Server -> Web/App
+
+UpLink는 아두이노 부분에서 본 해더파일을 라이브러리에 추가하고 코드를 받아서 
+실행하면 됩니다.
+
+<br />
+
+###  DownLink : Web/App -> Cloud Server -> THingPlug Server -> LoRa -> Device 
+
+DownLink는 클라이언트를 통해서 클라우드 서버에 신호를 보내고 클라우드 서버에서 
+LoRa 모듈을 통해 디바이스에 역제어를 거는 형식입니다.
+
+따라서 다운링크는 업링크와 다르게 서버 파트에서 작업이 필요합니다.
+
+---
+## How to control device by down-link
+
+### Installation
+
+```
+
+	$ git clone https://github.com/Haamseongho/ubinet_Server.git
+	$ npm install (클론 받은 로컬 저장소에서)
+	
+
+```
+
+
+
+### Usage
+
+---
+
+#### 1. POSTMAN에서 ThingPlug 서버와 소통하고자 header 부분 그리고 end-point 부분을 맞춰 준다.
+
+
+#### <a href="https://github.com/Haamseongho/ubinet_Server.git"> ThingPlug 서버 디바이스 등록 및 Ukey 받는 작업 & PostMan 활용 방법  </a>
+
+#### 2. POSTMAN을 이용하여 설정을 맞춰 주면 LoRa망을 통해 디바이스에 역제어를 걸 수 있습니다.
+
+<br />
+
+<img src="https://github.com/Haamseongho/ubinet_arduino/tree/master/images/postman2.JPG" />
+
+
+#### 3. clone받은 내용 중 route에서 dn_link 경로에 dev_reset.js를 활용합니다. 
+
+#### 4. dev_reset.js 부분에는 개인 LTID와 uKey 그리고 postman-token을 설정해 줍니다. 
+
+
+<br />
+
+포스트 맨에서 설정한 내용에 대한 code 뽑아오기
+
+<img src="https://github.com/Haamseongho/ubinet_arduino/tree/master/images/postman3.JPG"/>
+
+
+<hr />
+
+
+<img src="https://github.com/Haamseongho/ubinet_arduino/tree/master/images/dev_reset.JPG" />
+
+#### 5. dev_reset.js 부분이며 본 라우터에서 해당 디바이스에 역제어를 걸게 됩니다. (다운링크 완성)
+
+
+---
+
+### License
+
+MIT 
+
+node license : <a href="https://github.com/nodejs/node/blob/master/LICENSE"> https://github.com/nodejs/node/blob/master/LICENSE</a>
