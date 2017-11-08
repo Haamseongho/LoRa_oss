@@ -85,15 +85,13 @@
 
 ### 1. SKT_LoRa.h 다운로드 
 
-#### 1.1. <a href="https://github.com/Haamseongho/ubinet_arduino/tree/master/downloads/solum_lora_library.zip"> 솔루엠 해더파일 및 라이브러리 전체 다운로드 </a>
-
-#### 1.2. <a href="https://github.com/Haamseongho/ubinet_arduino/tree/master/downloads/SKT_LoRa_cpp.zip"> 주요 해더파일만 정리된 cpp 소스코드 다운로드 </a>
+#### 1.1. <a href="https://github.com/Haamseongho/ubinet_arduino/tree/master/downloads/SKT_LoRa_cpp.zip"> 주요 해더파일만 정리된 cpp 소스코드 다운로드 </a>
 
 
-#### 1.3.  <a href="https://github.com/Haamseongho/ubinet_arduino/blob/master/downloads/Timer-master.zip"> Timer.h 다운로드  </a>
+#### 1.2.  <a href="https://github.com/Haamseongho/ubinet_arduino/blob/master/downloads/Timer-master.zip"> Timer.h 다운로드  </a>
 
 
-#### 1.4.    Usage & Information ( reference : <a href="https://playground.arduino.cc/Code/Timer"> https://playground.arduino.cc/Code/Timer )</a>
+#### 1.3.    Usage & Information ( reference : <a href="https://playground.arduino.cc/Code/Timer"> https://playground.arduino.cc/Code/Timer )</a>
 
 <br />
 
