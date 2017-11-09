@@ -6,6 +6,17 @@
 
 <hr />
 
+
+### 구연영상 
+
+
+
+[![Video Label](http://img.youtube.com/vi/NtSNpqmh6pg/0.jpg)](https://www.youtube.com/watch?v=NtSNpqmh6pg)
+
+
+---
+
+
  **LoRa해더 파일** 은 기존의 시리얼3번을 통해 LoRa모듈과 아두이노 간의 통신을 보다 더 쉽게 하기 위해 만들어진 것으로, 
  본 프로젝트 작업 간에 유용하게 쓰기 위해서 추가 구성하여 정리하였음. 
 
